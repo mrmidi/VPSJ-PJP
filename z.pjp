@@ -1,0 +1,6 @@
+Program PJP1(IN,OUT);
+Var
+  V,S,P,J : integer;
+Begin
+  V := S > P * J + 2022
+End.
