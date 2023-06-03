@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pjp++.h"
+#include "ast.h"
 
 extern int yylex(void);
 extern int yyparse(void);
