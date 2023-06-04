@@ -1,0 +1,6 @@
+Program TEST(IN,OUT);
+Var
+    V,S,P,J : integer;
+BEGIN
+    V := S > P * J + 2022
+END.

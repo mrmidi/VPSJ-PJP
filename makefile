@@ -3,22 +3,22 @@ LEX=flex
 YACC=bison
 CFLAGS=-Wall
 
-all: pjp
+all: turbopjp
 
-pjp: pjp++.tab.c lex.yy.c
-	$(CC) $(CFLAGS) pjp++.tab.c lex.yy.c -o $@ -lfl -lm
+turbopjp: turbopjp.tab.c lex.yy.c
+	$(CC) $(CFLAGS) turbopjp.tab.c lex.yy.c -o $@ -lfl -lm
 
-lex.yy.c: pjp++.l
+lex.yy.c: turbopjp.l
 	$(LEX) $<
 
-pjp++.tab.c: pjp++.y
+turbopjp.tab.c: turbopjp.y
 	$(YACC) -d -v $<
 
 debug: CFLAGS += -g
 # debug: VERBOSE=-V
-debug: pjp
+debug: turbopjp
 
 .PHONY: clean
 
 clean:
-	rm -f lex.yy.c pjp++.tab.c pjp++.tab.h pjp *.output
+	rm -f lex.yy.c turbopjp.tab.c turbopjp.tab.h turbopjp *.output
